@@ -1,0 +1,33 @@
+{% extends "base.html" %} 
+
+
+{% block content %} 
+{% load static %}
+<link rel="stylesheet" href="{% static 'votedashboard/style.css' %}">
+<html>
+<head>
+    <title>Video Page</title>
+</head>
+<body>
+<div class="video-grid">
+{% for element in elements %}
+<form action="/contest/vote/{{ element.id }}/" class="video-box" method="post">
+    {% csrf_token %}
+
+        <h1 class="video-title">{{ element.title }}</h1>
+        <iframe  src="{{ element.youtube_url }}?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        {{ element.total_votes }} votes
+        {% if user.is_authenticated and not user_voted %}
+        <input type="submit" class="vote-button" onclick=""></button>
+        {% else %}
+        <input type="submit" class="vote-button" onclick="" disabled="disabled" ></button>
+
+        {% endif %}
+        </form>
+{% endfor %}
+</div>
+{% endblock %}
+
+
+</body>
+</html>

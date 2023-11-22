@@ -1,0 +1,39 @@
+.navbar {
+    background-color: #ffffff;
+    color: rgb(188, 188, 188);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5%;
+    margin-bottom: 2%;
+    padding: 1% 5%;
+}
+
+.logo-container img {
+    height: 90%; /* Ajusta la altura máxima del logo según tus necesidades */
+}
+
+.center-text {
+    text-align: center;
+    font-family: 'Vina Sans', sans-serif;
+    font-size: 150%;
+}
+.little-button {
+    margin-bottom: 10%;
+}
+.little-button a {
+    text-decoration: none;
+    font-size: 60%;
+    font-family: sans-serif;
+    color: rgb(49, 49, 49);
+    border-radius: 5px;
+}
+
+.little-button a:hover {
+    background-color: white;
+    color: #333;
+}
+.content-block {
+    padding-left: 10%;
+    padding-right: 10%;
+}
